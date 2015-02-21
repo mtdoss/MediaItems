@@ -8,26 +8,27 @@
 <% end %>
 
   <label for="title">Title:
-    <input type="text" value="<%= item.title %>" name="item[title]">
+    <input type="text" id="title" value="<%= item.title %>" name="item[title]">
+
   </label>
   <br>
   <br>
   <br>
 
   <label for="url">URL:
-    <input type="url" name="item[url]"><%= item.url %></textarea>
+    <input type="url" id="url" name="item[url]"><%= item.url %></textarea>
   </label>
   <br>
   <br>
 
   <label for="private">Private?:
-    <input type="checkbox" name="item[private]"
+    <input type="checkbox" id="private" name="item[private]"
     <%= 'checked="true"' if item.private %>>
   </label>
   <br>
 
   <label for="ttype">Type of URL:
-    <select name="item[ttype]">
+    <select id="ttype" name="item[ttype]">
       <option value="Website">Website</option>
       <option value="Image">Image</option>
       <option value="Video">Video</option>
