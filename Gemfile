@@ -41,6 +41,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'faker'
+  gem 'factory_girl_rails'
 
   gem 'rspec-rails'
   gem 'capybara'
