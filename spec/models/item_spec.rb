@@ -11,11 +11,8 @@
 #  updated_at :datetime         not null
 #
 
-FactoryGirl.define do 
-  factory :item do
-    title { Faker::Lorem.words(2).join(" ") }
-    url { Faker::Internet.url } 
-    type { ["image", "video", "website"].sample }
-  end
+require 'rails_helper'
 
+RSpec.describe Item, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

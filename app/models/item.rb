@@ -11,11 +11,10 @@
 #  updated_at :datetime         not null
 #
 
-FactoryGirl.define do 
-  factory :item do
-    title { Faker::Lorem.words(2).join(" ") }
-    url { Faker::Internet.url } 
-    type { ["image", "video", "website"].sample }
-  end
-
+class Item < ActiveRecord::Base
+  belongs_to(
+    :author,
+    class_name: "User",
+    foreign_key: :user_id
+  )
 end

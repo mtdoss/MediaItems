@@ -7,7 +7,7 @@ module ItemFeaturesHelper
     end
 
     fill_in "item[url]", with: item_url
-    fill_in "item[type]", with: item_type
+    fill_in "item[ttype]", with: item_type
 
     click_button "New Item"
   end

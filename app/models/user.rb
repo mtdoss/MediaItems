@@ -12,6 +12,7 @@
 
 class User < ActiveRecord::Base
   attr_reader :password
+  has_many :items, class_name: "Item", foreign_key: "user_id"
 
   validates :session_token, presence: true
   validates :username, uniqueness: true, presence: true

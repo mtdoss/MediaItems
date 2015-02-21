@@ -14,7 +14,7 @@ feature "CRUD of items" do
     end 
 
     it "should show the new item after creation" do
-      submit_new_item("Cool cat", "www.coolcatpicture.jpg", :image)
+      submit_new_item("Cool cat", "www.coolcatpicture.jpg", "image")
       expect(page).to have_content "Cool cat"
     end
   end
@@ -41,7 +41,7 @@ feature "CRUD of items" do
 
   feature "deleting items" do
     it 'should allow the deletion of an item' do
-      submit_new_item("Super cool cat", "www.reallycoolcatvideo.jpg", :video)
+      submit_new_item("Super cool cat", "www.reallycoolcatvideo.jpg", "video")
       visit items_url
       click_button "Delete"
       expect(page).not_to have_content "Super cool cat"
