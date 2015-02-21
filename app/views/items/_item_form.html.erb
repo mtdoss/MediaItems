@@ -1,0 +1,39 @@
+<% action = (action_type == :new) ? items_url : item_url(item) %>
+<% button_text = (action_type == :new) ? "New Item" : "Update Item"%>
+
+<form action="<%= action %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <% if action_type == :edit %>
+    <input type="hidden" name="_method" value="PUT">
+<% end %>
+
+  <label>Title:
+    <input type="text" value="<%= item.title %>" name="item[title]">
+  </label>
+  <br>
+  <br>
+  <br>
+
+  <label>URL:
+    <input type="url" name="item[url]"><%= item.url %></textarea>
+  </label>
+  <br>
+  <br>
+
+  <label>Private?:
+    <input type="checkbox" name="item[private]"
+    <%= 'checked="true"' if item.private %>>
+  </label>
+  <br>
+
+  <label>Type of URL:
+    <select name="item[ttype]">
+      <option value="Website">Website</option>
+      <option value="Image">Image</option>
+      <option value="Video">Video</option>
+    </select>
+  </label>
+  <br>
+
+  <input type="submit" value="<%= button_text %>">
+</form>
