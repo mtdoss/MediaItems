@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 feature 'the signup process' do
   it 'has a new user page' do
@@ -7,7 +7,7 @@ feature 'the signup process' do
   end 
 
   it 'shows username on the homepage after signup' do
-    sign_up as('mark')
+    sign_up_as('mark')
     expect(page).to have_content "mark"
   end
 end
