@@ -1,0 +1,7 @@
+<h1><%= @item.title %> </h1>
+
+<% if @item.ttype == "Website" %>
+  <a href="<%=@item.url%>"><%=@item.title%></a> 
+<% elsif @item.ttype == "Image" %>
+  <%= image_tag @item.url %>
+<% end %>
