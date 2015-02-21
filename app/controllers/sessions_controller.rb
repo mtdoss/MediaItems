@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       @user = User.new
       render :new
     else
-      login_user!
+      login!
     end
   end
 
