@@ -6,6 +6,6 @@
   <br>
 
   <% if current_user && current_user.id == item.user_id %>
-    <%= button_to "delete '#{item.title}' item", item_url(item), method: :delete %>
+    <%= button_to "Delete", item_url(item), method: :delete %>
   <% end %>
 </li>
