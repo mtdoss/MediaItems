@@ -20,8 +20,19 @@ class User < ActiveRecord::Base
   
   before_validation :ensure_session_token
 
+  def reset_session_token!
+    self.session_token = SecureRandom::urlsafe_base64(32)
+    self.save!
+    self.session_token
+  end
+
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+
+  def password=(new_password)
+    @password = new_password
+    self.password_digest = BCrypt::Password.create(new_password) 
   end
 
   def self.find_by_credentials(username, password)
@@ -30,4 +41,12 @@ class User < ActiveRecord::Base
 
     user.is_password?(password) ? user : nil
   end
+
+  private
+
+  def ensure_session_token
+    self.session_token ||= SecureRandom::urlsafe_base64(32)
+  end
+
+  
 end
