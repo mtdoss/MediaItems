@@ -7,26 +7,26 @@
     <input type="hidden" name="_method" value="PUT">
 <% end %>
 
-  <label>Title:
+  <label for="title">Title:
     <input type="text" value="<%= item.title %>" name="item[title]">
   </label>
   <br>
   <br>
   <br>
 
-  <label>URL:
+  <label for="url">URL:
     <input type="url" name="item[url]"><%= item.url %></textarea>
   </label>
   <br>
   <br>
 
-  <label>Private?:
+  <label for="private">Private?:
     <input type="checkbox" name="item[private]"
     <%= 'checked="true"' if item.private %>>
   </label>
   <br>
 
-  <label>Type of URL:
+  <label for="ttype">Type of URL:
     <select name="item[ttype]">
       <option value="Website">Website</option>
       <option value="Image">Image</option>
