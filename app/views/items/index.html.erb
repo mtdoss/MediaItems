@@ -1,0 +1,6 @@
+<h1>Your Items</h1>
+<ul>
+  <% @items.each do |item| %>
+    <% render "shared/show_item_basics", item: @item %>
+  <% end %>
+</ul>

@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = current_user.items.new(item_params)
-    
+
     if @item.save
       flash[:notices] = ["Item saved!"]
       redirect_to item_url(@item)
@@ -54,6 +54,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:title, :url, :ttype, :private
+    params.require(:item).permit(:title, :url, :ttype, :private)
   end
 end
