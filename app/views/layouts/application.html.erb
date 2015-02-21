@@ -2,8 +2,6 @@
 <html>
 <head>
 <title>MediaItems</title>
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <%= csrf_meta_tags %>
 </head>
 <body>
@@ -20,12 +18,14 @@
 
   <div class="pull-right">
     <% if current_user %>
-      <p>Welcome <%= current_user_name %></p>
+      <p>Welcome <%= current_user.username %></p>
     <%= button_to "Log Out", session_url, method: :delete %>
 
-    <p><%= link_to "Sign Up", new_user_url %></p>
-    <p>or</p>
-    <p><%= link_to "Log In", new_session_url %></p>
+  <% else %>
+
+      <p><%= link_to "Sign Up", new_user_url %></p>
+      <p>or</p>
+      <p><%= link_to "Log In", new_session_url %></p>
   <% end %>
   </div>
 </header>
