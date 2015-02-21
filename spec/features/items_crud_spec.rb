@@ -24,7 +24,7 @@ feature "CRUD of items" do
 
     it 'should have an edit item page' do
       visit edit_item_url(item)
-      expect(page).to have_content "Edit item"
+      expect(page).to have_content "Edit Item"
       find_field('title').value.should eq item.title
       find_field('url').value.should eq item.url 
     end
@@ -33,7 +33,6 @@ feature "CRUD of items" do
       visit edit_item_url(item)
       fill_in "title", with: "Silly dog"
       click_button "Update Item"
-      expect(page).not_to have_content "Edit item"
       expect(page).to have_content "Silly dog"
       expect(page).to have_content "Item edited!"
     end
