@@ -7,8 +7,8 @@ module ItemFeaturesHelper
     end
 
     fill_in "url", with: item_url
-    fill_in "ttype", with: item_type
 
+    select item_type.capitalize, from: 'ttype'
     click_button "New Item"
   end
 end
