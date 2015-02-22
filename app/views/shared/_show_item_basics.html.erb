@@ -1,8 +1,6 @@
-<% privacy = (item.private) ? "private" : "public" %>
 
 <li>
   <%= link_to item.title, item_url(item) %>
-  <%= privacy %>
   <br>
 
   <% if current_user && current_user.id == item.user_id %>
