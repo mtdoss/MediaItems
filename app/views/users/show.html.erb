@@ -1,0 +1,15 @@
+<h2><%= @user.username.capitalize %>'s Profile</h2>
+<h3><%= @user.username.capitalize %>'s Items:</h3>
+
+<% if @user == current_user %>
+<% end %>
+
+<ul>
+  <% @user.items.each do |item| %>
+    <% if (current_user && current_user.id == @user.id) || !(item.private) %>
+    <%= render "shared/show_item_basics", item: item %>
+<% end %>
+<% end %>
+</ul>
+
+<%= link_to "All Users", users_url %>
